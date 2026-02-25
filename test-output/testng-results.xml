@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-25T10:38:08 EST" name="Default suite" finished-at="2026-02-25T10:38:17 EST" duration-ms="8539">
+  <suite started-at="2026-02-25T10:49:40 EST" name="Default suite" finished-at="2026-02-25T10:49:50 EST" duration-ms="9730">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-02-25T10:38:08 EST" name="Default test" finished-at="2026-02-25T10:38:17 EST" duration-ms="8539">
+    <test started-at="2026-02-25T10:49:40 EST" name="Default test" finished-at="2026-02-25T10:49:50 EST" duration-ms="9730">
       <class name="com.Sneha.Automation_exercise.Runners.CucumberRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:38:08 EST" name="setUpClass" finished-at="2026-02-25T10:38:08 EST" duration-ms="168" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:49:40 EST" name="setUpClass" finished-at="2026-02-25T10:49:41 EST" duration-ms="168" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:38:08 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-25T10:38:17 EST" duration-ms="8326" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:49:41 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-25T10:49:50 EST" duration-ms="9516" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -54,7 +54,7 @@ at ✽.Signup page is opened(file:///C:/Automation%20exercise%20workspace/Automa
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:38:17 EST" name="tearDownClass" finished-at="2026-02-25T10:38:17 EST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:49:50 EST" name="tearDownClass" finished-at="2026-02-25T10:49:50 EST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
