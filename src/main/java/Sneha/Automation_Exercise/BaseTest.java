@@ -1,6 +1,7 @@
 package Sneha.Automation_Exercise;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -16,8 +17,14 @@ public class BaseTest {
      */
     public WebDriver initializeDriver() {
        // WebDriverManager.chromedriver().setup();
-       driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--headless");
+    	// Other necessary arguments for CI environments
+    	options.addArguments("--disable-gpu");
+    	options.addArguments("--no-sandbox"); 
+    	 driver = new ChromeDriver(options);
+      // driver = new ChromeDriver();
+        //driver.manage().window().maximize();
         return driver;
     }
 
