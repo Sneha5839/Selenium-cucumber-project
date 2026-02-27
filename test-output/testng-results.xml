@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-25T10:57:05 EST" name="Default suite" finished-at="2026-02-25T10:57:22 EST" duration-ms="17285">
+  <suite started-at="2026-02-26T20:38:22 EST" name="Default suite" finished-at="2026-02-26T20:39:00 EST" duration-ms="37783">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-02-25T10:57:05 EST" name="Default test" finished-at="2026-02-25T10:57:22 EST" duration-ms="17285">
+    <test started-at="2026-02-26T20:38:22 EST" name="Default test" finished-at="2026-02-26T20:39:00 EST" duration-ms="37783">
       <class name="com.Sneha.Automation_exercise.Runners.CucumberRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:57:05 EST" name="setUpClass" finished-at="2026-02-25T10:57:05 EST" duration-ms="173" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-26T20:38:22 EST" name="setUpClass" finished-at="2026-02-26T20:38:23 EST" duration-ms="1015" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@45312be2]]>
+                <![CDATA[org.testng.TestRunner@3277e499]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:57:05 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-25T10:57:22 EST" duration-ms="17068" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-26T20:38:23 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-26T20:38:59 EST" duration-ms="36341" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -34,10 +34,27 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.signup_page_is_opened(SignupSteps.java:75)
+at ✽.Signup page is opened(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:12)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-25T10:57:22 EST" name="tearDownClass" finished-at="2026-02-25T10:57:22 EST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e]" started-at="2026-02-26T20:38:59 EST" name="tearDownClass" finished-at="2026-02-26T20:39:00 EST" duration-ms="310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
