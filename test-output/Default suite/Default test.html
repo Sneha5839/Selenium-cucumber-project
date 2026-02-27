@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Feb 26 20:38:22 EST 2026</td>
+<td>Started on:</td><td>Thu Feb 26 20:48:35 EST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>37 seconds (37783 ms)</td>
+<tr><td>Total time:</td><td>44 seconds (44162 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,27 +77,21 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.Sneha.Automation_exercise.Runners.CucumberRunner.runScenario()'><b>runScenario</b><br>Test class: com.Sneha.Automation_exercise.Runners.CucumberRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful signup with new user credentials", "Signup Feature"</td>
-<td><div><pre>java.lang.AssertionError: expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at org.testng.Assert.assertEquals(Assert.java:666)
-	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.signup_page_is_opened(SignupSteps.java:75)
-	at ✽.Signup page is opened(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:12)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1949733764", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1949733764'><pre>java.lang.AssertionError: expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at org.testng.Assert.assertEquals(Assert.java:666)
-	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.signup_page_is_opened(SignupSteps.java:75)
-	at ✽.Signup page is opened(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:12)
+<td><div><pre>org.openqa.selenium.ElementNotInteractableException: Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: driver.version: unknown
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.clickOnElement(BrowserUtils.java:49)
+	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.clicks_signup_button(SignupSteps.java:67)
+	at ✽.clicks Signup button(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1816547292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1816547292'><pre>org.openqa.selenium.ElementNotInteractableException: Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: driver.version: unknown
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.clickOnElement(BrowserUtils.java:49)
+	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.clicks_signup_button(SignupSteps.java:67)
+	at ✽.clicks Signup button(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:11)
 </pre></div></td>
-<td>36</td>
+<td>42</td>
 <td>com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e</td></tr>
 </table><p>
 </body>

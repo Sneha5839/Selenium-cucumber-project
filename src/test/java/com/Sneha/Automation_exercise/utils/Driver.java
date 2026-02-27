@@ -18,7 +18,7 @@ public class Driver {
         	// Other necessary arguments for CI environments
         	options.addArguments("--disable-gpu");
         	options.addArguments("--no-sandbox"); 
-            driverPool.set(new ChromeDriver(options));
+            driverPool.set(new ChromeDriver());
             driverPool.get().manage().window().maximize();
         }
         return driverPool.get();

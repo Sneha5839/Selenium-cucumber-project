@@ -9,19 +9,16 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">37,783</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">44,162</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.Sneha.Automation_exercise.Runners.CucumberRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1772156303323</td><td rowspan="1">36341</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.Sneha.Automation_exercise.Runners.CucumberRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1772156916324</td><td rowspan="1">42526</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.Sneha.Automation_exercise.Runners.CucumberRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Successful signup with new user credentials&quot;</td><td>&quot;Signup Feature&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected [Automation Exercise - Signup] but found [Automation Exercise - Signup / Login]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at org.testng.Assert.assertEquals(Assert.java:666)
-	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.signup_page_is_opened(SignupSteps.java:75)
-	at ✽.Signup page is opened(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:12)
+<h2>Default test</h2><h3 id="m0">com.Sneha.Automation_exercise.Runners.CucumberRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Successful signup with new user credentials&quot;</td><td>&quot;Signup Feature&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: driver.version: unknown
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.clickOnElement(BrowserUtils.java:49)
+	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.clicks_signup_button(SignupSteps.java:67)
+	at ✽.clicks Signup button(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:11)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
