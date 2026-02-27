@@ -3,11 +3,13 @@ package com.Sneha.Automation_exercise.stepdefinitions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
+import org.apache.logging.log4j.Logger;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import jdk.internal.org.jline.utils.Log;
+
 import com.Sneha.Automation_exercise.Pages.SignUppage;
 import com.Sneha.Automation_exercise.utils.BrowserUtils.*;
 import com.Sneha.Automation_exercise.utils.Driver;
@@ -25,7 +27,7 @@ public class SignupSteps extends BaseTest{
 	public void user_navigates_to_the_application() {
 	    // Write code here that turns the phrase above into concrete actions
 		Driver.getDriver().get("https://automationexercise.com");
-		System.out.println("reached user navigates to the application");
+		logger.info("reached user navigates to the application");
 		assertTrue(isElementVisible(signuppage.signup,"About signup link"));
 	    //throw new io.cucumber.java.PendingException();
 	}
@@ -71,7 +73,8 @@ public class SignupSteps extends BaseTest{
 
 	
 	assertEquals(Driver.getDriver().getTitle(),"Automation Exercise - Signup");
-	System.out.println(Driver.getDriver().getTitle());
+	//System.out.println(Driver.getDriver().getTitle());
+	logger.info("Signup page is opened and title is verified");	
 	}
 
 	@Then("verify Enter account information text is present")

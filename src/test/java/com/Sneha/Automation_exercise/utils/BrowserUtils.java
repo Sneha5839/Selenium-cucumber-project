@@ -17,8 +17,8 @@ import java.util.*;
 
 public class BrowserUtils {
 
-  static final Logger logger = LogManager.getLogger(BrowserUtils.class);
- 
+  //public static final Logger logger = LogManager.getLogger(BrowserUtils.class);
+ public static final Logger logger = LogManager.getLogger(BrowserUtils.class);
   public static void clickWithJS(WebElement element) {
     waitForVisibility(element);
     ((JavascriptExecutor) Driver.getDriver())
