@@ -3,7 +3,9 @@ package com.Sneha.Automation_exercise.utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class Driver {
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
@@ -12,13 +14,24 @@ public class Driver {
 
     public static WebDriver getDriver() {
         if (driverPool.get() == null) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-        	options.addArguments("--headless");
-        	// Other necessary arguments for CI environments
-        	options.addArguments("--disable-gpu");
-        	options.addArguments("--no-sandbox"); 
-            driverPool.set(new ChromeDriver());
+        	
+            //WebDriverManager.chromedriver().setup();
+            
+           // driverPool.set(new ChromeDriver());
+        	
+        	FirefoxOptions options = new FirefoxOptions();
+        	
+        	
+        	FirefoxProfile profile = new FirefoxProfile();
+
+            // Disable disk and memory cache
+            profile.setPreference("browser.cache.disk.enable", false);
+            profile.setPreference("browser.cache.memory.enable", false);
+            options.addArguments("-private");
+            // Add the profile to the options
+            options.setProfile(profile);
+        driverPool.set(new FirefoxDriver(options));
+          
             driverPool.get().manage().window().maximize();
         }
         return driverPool.get();

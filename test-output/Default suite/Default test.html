@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Feb 26 20:48:35 EST 2026</td>
+<td>Started on:</td><td>Tue Mar 10 09:40:25 EDT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>44 seconds (44162 ms)</td>
+<tr><td>Total time:</td><td>59 seconds (59442 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,23 +76,97 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Sneha.Automation_exercise.Runners.CucumberRunner.runScenario()'><b>runScenario</b><br>Test class: com.Sneha.Automation_exercise.Runners.CucumberRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful signup with new user credentials", "Signup Feature"</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+<td title='com.Sneha.Automation_exercise.Runners.CucumberRunner.runScenario()'><b>runScenario</b><br>Test class: com.Sneha.Automation_exercise.Runners.CucumberRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with existing user credentials", "Login Feature"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[contains(text(),&apos;Logged in as&apos;)]&apos;
+(tried for 40 seconds with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.waitForVisibility(BrowserUtils.java:77)
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.isElementVisible(BrowserUtils.java:96)
+	at com.Sneha.Automation_exercise.stepdefinitions.LoginSteps.verify_user_is_logged_in_as(LoginSteps.java:43)
+	at ✽.verify user is logged in as &quot;steve&quot;(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/Login.feature:11)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logged in as&apos;)]&quot;}
+  (Session info: chrome=145.0.7632.160)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
-Driver info: driver.version: unknown
-	at com.Sneha.Automation_exercise.utils.BrowserUtils.clickOnElement(BrowserUtils.java:49)
-	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.clicks_signup_button(SignupSteps.java:67)
-	at ✽.clicks Signup button(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:11)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1816547292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1816547292'><pre>org.openqa.selenium.ElementNotInteractableException: Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [63022f3d567a95e215fdfcb430ffefc4, findElement {using=xpath, value=//a[contains(text(),&apos;Logged in as&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\snehs\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62116}, goog:processID: 16612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62116/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 63022f3d567a95e215fdfcb430ffefc4
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:367)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:353)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:350)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
+	... 4 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace347320030", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace347320030'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[contains(text(),&apos;Logged in as&apos;)]&apos;
+(tried for 40 seconds with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.waitForVisibility(BrowserUtils.java:77)
+	at com.Sneha.Automation_exercise.utils.BrowserUtils.isElementVisible(BrowserUtils.java:96)
+	at com.Sneha.Automation_exercise.stepdefinitions.LoginSteps.verify_user_is_logged_in_as(LoginSteps.java:43)
+	at ✽.verify user is logged in as &quot;steve&quot;(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/Login.feature:11)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logged in as&apos;)]&quot;}
+  (Session info: chrome=145.0.7632.160)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
-Driver info: driver.version: unknown
-	at com.Sneha.Automation_exercise.utils.BrowserUtils.clickOnElement(BrowserUtils.java:49)
-	at com.Sneha.Automation_exercise.stepdefinitions.SignupSteps.clicks_signup_button(SignupSteps.java:67)
-	at ✽.clicks Signup button(file:///C:/Automation%20exercise%20workspace/Automation_Exercise/src/test/resources/Features/SignUp.feature:11)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [63022f3d567a95e215fdfcb430ffefc4, findElement {using=xpath, value=//a[contains(text(),&apos;Logged in as&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\snehs\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62116}, goog:processID: 16612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62116/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 63022f3d567a95e215fdfcb430ffefc4
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:367)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:353)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:350)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
+	... 4 more
 </pre></div></td>
-<td>42</td>
-<td>com.Sneha.Automation_exercise.Runners.CucumberRunner@236e3f4e</td></tr>
+<td>58</td>
+<td>com.Sneha.Automation_exercise.Runners.CucumberRunner@87a85e1</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Sneha.Automation_exercise.Runners.CucumberRunner.runScenario()'><b>runScenario</b><br>Test class: com.Sneha.Automation_exercise.Runners.CucumberRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful signup with new user credentials", "Signup Feature"</td>
+<td></td>
+<td>25</td>
+<td>com.Sneha.Automation_exercise.Runners.CucumberRunner@87a85e1</td></tr>
 </table><p>
 </body>
 </html>

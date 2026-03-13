@@ -3,7 +3,11 @@ package com.Sneha.Automation_exercise.stepdefinitions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -186,7 +190,9 @@ public class SignupSteps extends BaseTest{
 
 	@Then("clicks Create Account button")
 	public void then_clicks_create_account_button() {
+		
 		clickOnElement(signuppage.createAccountButton, "Create Account button");
+		
 	}
 
 	}

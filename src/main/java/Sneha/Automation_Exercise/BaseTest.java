@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -17,14 +18,18 @@ public class BaseTest {
      */
     public WebDriver initializeDriver() {
        // WebDriverManager.chromedriver().setup();
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--headless");
+    	//ChromeOptions options = new ChromeOptions();
+    	//options.addArguments("--headless");
     	// Other necessary arguments for CI environments
-    	options.addArguments("--disable-gpu");
-    	options.addArguments("--no-sandbox"); 
-    	 driver = new ChromeDriver(options);
-      // driver = new ChromeDriver();
-        //driver.manage().window().maximize();
+    	//options.addArguments("--disable-gpu");
+    	//options.addArguments("--no-sandbox"); 
+    	// driver = new ChromeDriver(options);
+    	FirefoxOptions options = new FirefoxOptions();
+    	
+    	options.addArguments("-private");
+    	WebDriver driver = new FirefoxDriver(options);
+       driver = new FirefoxDriver();
+        driver.manage().window().maximize();
         return driver;
     }
 
@@ -54,7 +59,7 @@ public class BaseTest {
      */
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+           // driver.quit();
         }
     }
 

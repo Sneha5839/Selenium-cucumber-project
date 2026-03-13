@@ -3,6 +3,7 @@ package com.Sneha.Automation_exercise.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
 /*import utils.driver.Driver;
@@ -14,6 +15,7 @@ import io.cucumber.java.Scenario;
 
 import java.time.Duration;
 import java.util.*;
+import java.util.NoSuchElementException;
 
 public class BrowserUtils {
 
@@ -49,7 +51,17 @@ public class BrowserUtils {
       throw new ElementNotInteractableException("");
     }
   }
-
+public static void hoverOverElement(WebElement element, String elementNameLog) {
+	try {
+	  waitForVisibility(element, elementNameLog);
+	  logger.info("Hovering over " + elementNameLog);
+	  Actions actions = new Actions(Driver.getDriver());
+	  actions.moveToElement(element).perform();
+	} catch (Exception e) {
+	  logger.error("Can't hover over " + elementNameLog + ". " + e.getMessage());
+	  throw new ElementNotInteractableException("");
+	}
+  }
   public static void sendKeys(WebElement element, String value, String elementNameLog) {
     try {
       waitForVisibility(element, elementNameLog);
@@ -90,6 +102,8 @@ public class BrowserUtils {
         new WebDriverWait(
             Driver.getDriver(), Duration.ofSeconds(Property.getWaitTime(WaitTime.VISIBILITY)));
     return wait.until(ExpectedConditions.elementToBeClickable(element));
+    
+    
   }
 
   public static Boolean isElementVisible(WebElement element, String elementNameLog) {
