@@ -6,9 +6,6 @@ GitHub Note:
 
 <div align="center">
 
-<!-- Topic image -->
-<img src="https://raw.githubusercontent.com/Sneha5839/Selenium-cucumber-project/main/assets/ecommerce-icon.png" alt="Selenium + Cucumber BDD Framework" width="900" />
-
 <h1 style="margin: 0;">Selenium + Cucumber BDD Automation Framework</h1>
 <p style="margin: 8px 0 0; max-width: 900px;">
 Java-based UI test automation framework using <b>Selenium WebDriver</b> + <b>Cucumber</b> with <b>BDD</b>,
