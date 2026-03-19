@@ -49,13 +49,13 @@ This project automates UI functional scenarios for **automationexercise.com** us
   - **WebDriver binaries** (or WebDriverManager dependency if used)
 
 ### Recommended
-- ❖ **Git**
-- ❖ IDE plugins: **Cucumber for Java**, **Gherkin**
+-  **Git**
+-  IDE plugins: **Cucumber for Java**, **Gherkin**
 
 ---
 
 ## Language Used
-- ❖ ✅ **Java**
+- ✅ **Java**
 
 ---
 
@@ -94,70 +94,70 @@ This project automates UI functional scenarios for **automationexercise.com** us
 
 The framework covers end-to-end workflows on **automationexercise.com**, including:
 
-- ❖ **Sign Up (New User Registration)**
-  - ❖ Register a new user with valid details
-  - ❖ Validate successful account creation
+-  **Sign Up (New User Registration)**
+  -  Register a new user with valid details
+  -  Validate successful account creation
 
-- ❖ **Login (Existing User)**
-  - ❖ Login with valid credentials
-  - ❖ Negative login (invalid credentials) validation
+-  **Login (Existing User)**
+  -  Login with valid credentials
+  -  Negative login (invalid credentials) validation
 
-- ❖ **Product Search**
-  - ❖ Search for a product using the search functionality
-  - ❖ Validate relevant products are displayed
+-  **Product Search**
+  -  Search for a product using the search functionality
+  -  Validate relevant products are displayed
 
-- ❖ **Add to Cart**
-  - ❖ Add a product to the cart
-  - ❖ Validate cart contents and product details
+-  **Add to Cart**
+  -  Add a product to the cart
+  -  Validate cart contents and product details
 
-- ❖ **Purchase / Checkout Flow**
-  - ❖ Complete purchase after logging in as:
-    - ❖ a **new user** (register → login → checkout)
-    - ❖ an **existing user** (login → checkout)
-  - ❖ Proceed through address/summary steps
-  - ❖ **Complete payment process** and validate order placement
+-  **Purchase / Checkout Flow**
+  -  Complete purchase after logging in as:
+    -  a **new user** (register → login → checkout)
+    -  an **existing user** (login → checkout)
+  -  Proceed through address/summary steps
+  -  **Complete payment process** and validate order placement
 
-- ❖ **Account Deletion (Cleanup)**
-  - ❖ Delete the user account after order completion (where applicable)
-  - ❖ Validate account deletion confirmation
+-  **Account Deletion (Cleanup)**
+  -  Delete the user account after order completion (where applicable)
+  -  Validate account deletion confirmation
 
 ---
 
 ## Key Features Implemented
 
-- ❖ ✅ **BDD scenarios** for key flows on *automationexercise.com*
-- ❖ ✅ **POM/Page Factory** design:
-  - ❖ Page-wise separation of locators and page actions
-  - ❖ Cleaner step definitions (readable and reusable)
-- ❖ ✅ **Reusable Utilities** (commonly implemented in automation frameworks):
-  - ❖ wait helpers (explicit waits)
-  - ❖ common actions (click/type/select)
-- ❖ ✅ **Hooks (Before/After)** for:
-  - ❖ browser setup
-  - ❖ teardown / cleanup
-  - ❖ screenshots on failure (if implemented)
-- ❖ ✅ **Cucumber Reporting** (HTML/JSON via Cucumber plugins, if configured)
+-  ✅ **BDD scenarios** for key flows on *automationexercise.com*
+-  ✅ **POM/Page Factory** design:
+  -  Page-wise separation of locators and page actions
+  -  Cleaner step definitions (readable and reusable)
+-  ✅ **Reusable Utilities** (commonly implemented in automation frameworks):
+  -  wait helpers (explicit waits)
+  -  common actions (click/type/select)
+-  ✅ **Hooks (Before/After)** for:
+  -  browser setup
+  -  teardown / cleanup
+  -  screenshots on failure (if implemented)
+-  ✅ **Cucumber Reporting** (HTML/JSON via Cucumber plugins, if configured)
 
 ---
 
 ## Framework Logic / Design Approach
 
 ### 1) BDD Layer (Feature Files)
-- ❖ Write scenarios in `*.feature` files using business-readable steps.
+-  Write scenarios in `*.feature` files using business-readable steps.
 
 ### 2) Step Definition Layer
-- ❖ Step classes map Gherkin steps to Java methods.
-- ❖ Step methods call Page classes to perform UI actions.
+-  Step classes map Gherkin steps to Java methods.
+-  Step methods call Page classes to perform UI actions.
 
 ### 3) Page Layer (POM + Page Factory)
-- ❖ Each page class represents one screen/module of the application.
-- ❖ Elements are defined using `@FindBy` annotations (Page Factory).
-- ❖ Page methods encapsulate actions like `login()`, `searchProduct()`, `addToCart()`, etc.
+-  Each page class represents one screen/module of the application.
+-  Elements are defined using `@FindBy` annotations (Page Factory).
+-  Page methods encapsulate actions like `login()`, `searchProduct()`, `addToCart()`, etc.
 
 **Benefits:**
-- ❖ Better maintainability when UI locators change
-- ❖ Improved readability and reusability
-- ❖ Reduced duplication across test steps
+-  Better maintainability when UI locators change
+-  Improved readability and reusability
+-  Reduced duplication across test steps
 
 ---
 
@@ -214,30 +214,30 @@ Selenium-cucumber-project/
 
 ### What each folder/package is for
 
-- ❖ `src/test/resources/Features/`  
+-  `src/test/resources/Features/`  
   Contains the **Cucumber `.feature` files** written in **Gherkin** (BDD scenarios).
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/stepdefinitions/`  
+-  `src/test/java/com/Sneha/Automation_exercise/stepdefinitions/`  
   Contains **Step Definition** classes that map `Given/When/Then` steps to Java code.
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/Pages/`  
+-  `src/test/java/com/Sneha/Automation_exercise/Pages/`  
   Contains **Page Object Model (POM)** classes implemented using **Page Factory** (`@FindBy` locators + page actions).
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/Runners/CucumberRunner.java`  
+-  `src/test/java/com/Sneha/Automation_exercise/Runners/CucumberRunner.java`  
   The **Cucumber runner** used to execute the test suite.
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/utils/`  
+-  `src/test/java/com/Sneha/Automation_exercise/utils/`  
   Framework utilities like:
-  - ❖ `Driver.java` (WebDriver lifecycle)
-  - ❖ `BrowserUtils.java` (common helpers: waits, scrolling, element actions, etc.)
-  - ❖ `Property.java` (config/property reader)
-  - ❖ `ScenarioContext.java` (scenario-level shared context)
-  - ❖ `WaitTime.java` (wait constants)
+  -  `Driver.java` (WebDriver lifecycle)
+  -  `BrowserUtils.java` (common helpers: waits, scrolling, element actions, etc.)
+  -  `Property.java` (config/property reader)
+  -  `ScenarioContext.java` (scenario-level shared context)
+  -  `WaitTime.java` (wait constants)
 
-- ❖ `pom.xml`  
+-  `pom.xml`  
   Maven dependencies + test execution configuration.
 
-- ❖ `testng.xml`  
+-  `testng.xml`  
   TestNG suite file (if running via TestNG integration).
 
 ---
@@ -259,13 +259,13 @@ Selenium-cucumber-project/
 ### 📢 Advertisements / Random Pop-ups Appearing
 **Problem:** ads (banners/iframes/popups) intermittently appear and block clicks or hide elements, causing flaky failures.  
 **How it was resolved:**
-- ❖ Added a **safe-check** before interacting with elements:
-  - ❖ detect whether an ad overlay/popup is present
-  - ❖ if present, **close it** (if a close button exists) OR wait until it disappears
-- ❖ As a fallback for stubborn overlays:
-  - ❖ scroll the target element into view
-  - ❖ use `ExpectedConditions.elementToBeClickable`
-  - ❖ (optional/last resort) JavaScript click only when normal click is consistently intercepted
+-  Added a **safe-check** before interacting with elements:
+  -  detect whether an ad overlay/popup is present
+  -  if present, **close it** (if a close button exists) OR wait until it disappears
+-  As a fallback for stubborn overlays:
+  -  scroll the target element into view
+  -  use `ExpectedConditions.elementToBeClickable`
+  -  (optional/last resort) JavaScript click only when normal click is consistently intercepted
 
 > This approach reduces flaky failures by ensuring the page is in a stable, interactable state before every action.
 
@@ -293,11 +293,11 @@ mvn test -Dcucumber.filter.tags="@smoke"
 ---
 
 ## Target Application
-- ❖ Website: **automationexercise.com**
-- ❖ Automation Type: **UI Functional Testing**
-- ❖ Framework: **Selenium + Cucumber (BDD)**
-- ❖ Design: **POM / Page Factory**
-- ❖ Build Tool: **Maven**
+-  Website: **automationexercise.com**
+-  Automation Type: **UI Functional Testing**
+-  Framework: **Selenium + Cucumber (BDD)**
+-  Design: **POM / Page Factory**
+-  Build Tool: **Maven**
 
 ---
 
