@@ -95,31 +95,31 @@ This project automates UI functional scenarios for **automationexercise.com** us
 The framework covers end-to-end workflows on **automationexercise.com**, including:
 
 -  **Sign Up (New User Registration)**
-  -  Register a new user with valid details
-  -  Validate successful account creation
+    -  Register a new user with valid details
+    -  Validate successful account creation
 
 -  **Login (Existing User)**
-  -  Login with valid credentials
-  -  Negative login (invalid credentials) validation
+    -  Login with valid credentials
+    -  Negative login (invalid credentials) validation
 
 -  **Product Search**
-  -  Search for a product using the search functionality
-  -  Validate relevant products are displayed
+    -  Search for a product using the search functionality
+    -  Validate relevant products are displayed
 
 -  **Add to Cart**
-  -  Add a product to the cart
-  -  Validate cart contents and product details
+    -  Add a product to the cart
+    -  Validate cart contents and product details
 
 -  **Purchase / Checkout Flow**
-  -  Complete purchase after logging in as:
-    -  a **new user** (register → login → checkout)
-    -  an **existing user** (login → checkout)
-  -  Proceed through address/summary steps
-  -  **Complete payment process** and validate order placement
+    -  Complete purchase after logging in as:
+      -  a **new user** (register → login → checkout)
+      -  an **existing user** (login → checkout)
+    -  Proceed through address/summary steps
+    -  **Complete payment process** and validate order placement
 
 -  **Account Deletion (Cleanup)**
-  -  Delete the user account after order completion (where applicable)
-  -  Validate account deletion confirmation
+    -  Delete the user account after order completion (where applicable)
+    -  Validate account deletion confirmation
 
 ---
 
