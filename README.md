@@ -127,15 +127,15 @@ The framework covers end-to-end workflows on **automationexercise.com**, includi
 
 -  ✅ **BDD scenarios** for key flows on *automationexercise.com*
 -  ✅ **POM/Page Factory** design:
-  -  Page-wise separation of locators and page actions
-  -  Cleaner step definitions (readable and reusable)
+    -  Page-wise separation of locators and page actions
+    -  Cleaner step definitions (readable and reusable)
 -  ✅ **Reusable Utilities** (commonly implemented in automation frameworks):
-  -  wait helpers (explicit waits)
-  -  common actions (click/type/select)
+    -  wait helpers (explicit waits)
+    -  common actions (click/type/select)
 -  ✅ **Hooks (Before/After)** for:
-  -  browser setup
-  -  teardown / cleanup
-  -  screenshots on failure (if implemented)
+    -  browser setup
+    -  teardown / cleanup
+    -  screenshots on failure (if implemented)
 -  ✅ **Cucumber Reporting** (HTML/JSON via Cucumber plugins, if configured)
 
 ---
