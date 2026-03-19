@@ -30,12 +30,12 @@ Test site: <a href="https://automationexercise.com" target="_blank" rel="noopene
 
 This project automates UI functional scenarios for **automationexercise.com** using a clean BDD structure:
 
- **Gherkin Feature files** (`Given / When / Then`)
- **Step Definitions** in **Java**
- **Selenium WebDriver** for browser automation
- **Cucumber Runner** to execute tests
- **Page Object Model (POM)** with **Page Factory** for maintainable locators and actions
- **Maven** for build, dependency management, and test execution
+- **Gherkin Feature files** (`Given / When / Then`)
+- **Step Definitions** in **Java**
+- **Selenium WebDriver** for browser automation
+- **Cucumber Runner** to execute tests
+- **Page Object Model (POM)** with **Page Factory** for maintainable locators and actions
+- **Maven** for build, dependency management, and test execution
 
 ---
 
