@@ -33,32 +33,40 @@ Test site: <a href="https://automationexercise.com" target="_blank" rel="noopene
 
 This project automates UI functional scenarios for **automationexercise.com** using a clean BDD structure:
 
-- **Gherkin Feature files** (`Given / When / Then`)
-- **Step Definitions** in **Java**
-- **Selenium WebDriver** for browser automation
-- **Cucumber Runner** to execute tests
-- **Page Object Model (POM)** with **Page Factory** for maintainable locators and actions
-- **Maven** for build, dependency management, and test execution
+<ul>
+  <li>❖ <b>Gherkin Feature files</b> (<code>Given / When / Then</code>)</li>
+  <li>❖ <b>Step Definitions</b> in <b>Java</b></li>
+  <li>❖ <b>Selenium WebDriver</b> for browser automation</li>
+  <li>❖ <b>Cucumber Runner</b> to execute tests</li>
+  <li>❖ <b>Page Object Model (POM)</b> with <b>Page Factory</b> for maintainable locators and actions</li>
+  <li>❖ <b>Maven</b> for build, dependency management, and test execution</li>
+</ul>
 
 ---
 
 ## Main Software Installed (Prerequisites)
 
 ### Required
-- ❖ **Java (JDK 8+)**
-- ❖ **Maven**
-- ❖ **IDE**: IntelliJ IDEA / Eclipse
-- ❖ **Browser**: Chrome / Edge / Firefox
-- ❖ **WebDriver binaries** (or WebDriverManager dependency if used)
+<ul>
+  <li>❖ <b>Java (JDK 8+)</b></li>
+  <li>❖ <b>Maven</b></li>
+  <li>❖ <b>IDE</b>: IntelliJ IDEA / Eclipse</li>
+  <li>❖ <b>Browser</b>: Chrome / Edge / Firefox</li>
+  <li>❖ <b>WebDriver binaries</b> (or WebDriverManager dependency if used)</li>
+</ul>
 
 ### Recommended
-- ❖ **Git**
-- ❖ IDE plugins: **Cucumber for Java**, **Gherkin**
+<ul>
+  <li>❖ <b>Git</b></li>
+  <li>❖ IDE plugins: <b>Cucumber for Java</b>, <b>Gherkin</b></li>
+</ul>
 
 ---
 
 ## Language Used
-- ❖ ✅ **Java**
+<ul>
+  <li>❖ ✅ <b>Java</b></li>
+</ul>
 
 ---
 
@@ -97,70 +105,126 @@ This project automates UI functional scenarios for **automationexercise.com** us
 
 The framework covers end-to-end workflows on **automationexercise.com**, including:
 
-- ❖ **Sign Up (New User Registration)**
-  - ❖ Register a new user with valid details
-  - ❖ Validate successful account creation
+<ul>
+  <li>
+    ❖ <b>Sign Up (New User Registration)</b>
+    <ul>
+      <li>❖ Register a new user with valid details</li>
+      <li>❖ Validate successful account creation</li>
+    </ul>
+  </li>
 
-- ❖ **Login (Existing User)**
-  - ❖ Login with valid credentials
-  - ❖ Negative login (invalid credentials) validation
+  <li>
+    ❖ <b>Login (Existing User)</b>
+    <ul>
+      <li>❖ Login with valid credentials</li>
+      <li>❖ Negative login (invalid credentials) validation</li>
+    </ul>
+  </li>
 
-- ❖ **Product Search**
-  - ❖ Search for a product using the search functionality
-  - ❖ Validate relevant products are displayed
+  <li>
+    ❖ <b>Product Search</b>
+    <ul>
+      <li>❖ Search for a product using the search functionality</li>
+      <li>❖ Validate relevant products are displayed</li>
+    </ul>
+  </li>
 
-- ❖ **Add to Cart**
-  - ❖ Add a product to the cart
-  - ❖ Validate cart contents and product details
+  <li>
+    ❖ <b>Add to Cart</b>
+    <ul>
+      <li>❖ Add a product to the cart</li>
+      <li>❖ Validate cart contents and product details</li>
+    </ul>
+  </li>
 
-- ❖ **Purchase / Checkout Flow**
-  - ❖ Complete purchase after logging in as:
-    - ❖ a **new user** (register → login → checkout)
-    - ❖ an **existing user** (login → checkout)
-  - ❖ Proceed through address/summary steps
-  - ❖ **Complete payment process** and validate order placement
+  <li>
+    ❖ <b>Purchase / Checkout Flow</b>
+    <ul>
+      <li>
+        ❖ Complete purchase after logging in as:
+        <ul>
+          <li>❖ a <b>new user</b> (register → login → checkout)</li>
+          <li>❖ an <b>existing user</b> (login → checkout)</li>
+        </ul>
+      </li>
+      <li>❖ Proceed through address/summary steps</li>
+      <li>❖ <b>Complete payment process</b> and validate order placement</li>
+    </ul>
+  </li>
 
-- ❖ **Account Deletion (Cleanup)**
-  - ❖ Delete the user account after order completion (where applicable)
-  - ❖ Validate account deletion confirmation
+  <li>
+    ❖ <b>Account Deletion (Cleanup)</b>
+    <ul>
+      <li>❖ Delete the user account after order completion (where applicable)</li>
+      <li>❖ Validate account deletion confirmation</li>
+    </ul>
+  </li>
+</ul>
 
 ---
 
 ## Key Features Implemented
 
-- ❖ ✅ **BDD scenarios** for key flows on *automationexercise.com*
-- ❖ ✅ **POM/Page Factory** design:
-  - ❖ Page-wise separation of locators and page actions
-  - ❖ Cleaner step definitions (readable and reusable)
-- ❖ ✅ **Reusable Utilities** (commonly implemented in automation frameworks):
-  - ❖ wait helpers (explicit waits)
-  - ❖ common actions (click/type/select)
-- ❖ ✅ **Hooks (Before/After)** for:
-  - ❖ browser setup
-  - ❖ teardown / cleanup
-  - ❖ screenshots on failure (if implemented)
-- ❖ ✅ **Cucumber Reporting** (HTML/JSON via Cucumber plugins, if configured)
+<ul>
+  <li>❖ ✅ <b>BDD scenarios</b> for key flows on <i>automationexercise.com</i></li>
+
+  <li>
+    ❖ ✅ <b>POM/Page Factory</b> design:
+    <ul>
+      <li>❖ Page-wise separation of locators and page actions</li>
+      <li>❖ Cleaner step definitions (readable and reusable)</li>
+    </ul>
+  </li>
+
+  <li>
+    ❖ ✅ <b>Reusable Utilities</b> (commonly implemented in automation frameworks):
+    <ul>
+      <li>❖ wait helpers (explicit waits)</li>
+      <li>❖ common actions (click/type/select)</li>
+    </ul>
+  </li>
+
+  <li>
+    ❖ ✅ <b>Hooks (Before/After)</b> for:
+    <ul>
+      <li>❖ browser setup</li>
+      <li>❖ teardown / cleanup</li>
+      <li>❖ screenshots on failure (if implemented)</li>
+    </ul>
+  </li>
+
+  <li>❖ ✅ <b>Cucumber Reporting</b> (HTML/JSON via Cucumber plugins, if configured)</li>
+</ul>
 
 ---
 
 ## Framework Logic / Design Approach
 
 ### 1) BDD Layer (Feature Files)
-- ❖ Write scenarios in `*.feature` files using business-readable steps.
+<ul>
+  <li>❖ Write scenarios in <code>*.feature</code> files using business-readable steps.</li>
+</ul>
 
 ### 2) Step Definition Layer
-- ❖ Step classes map Gherkin steps to Java methods.
-- ❖ Step methods call Page classes to perform UI actions.
+<ul>
+  <li>❖ Step classes map Gherkin steps to Java methods.</li>
+  <li>❖ Step methods call Page classes to perform UI actions.</li>
+</ul>
 
 ### 3) Page Layer (POM + Page Factory)
-- ❖ Each page class represents one screen/module of the application.
-- ❖ Elements are defined using `@FindBy` annotations (Page Factory).
-- ❖ Page methods encapsulate actions like `login()`, `searchProduct()`, `addToCart()`, etc.
+<ul>
+  <li>❖ Each page class represents one screen/module of the application.</li>
+  <li>❖ Elements are defined using <code>@FindBy</code> annotations (Page Factory).</li>
+  <li>❖ Page methods encapsulate actions like <code>login()</code>, <code>searchProduct()</code>, <code>addToCart()</code>, etc.</li>
+</ul>
 
-**Benefits:**
-- ❖ Better maintainability when UI locators change
-- ❖ Improved readability and reusability
-- ❖ Reduced duplication across test steps
+<b>Benefits:</b>
+<ul>
+  <li>❖ Better maintainability when UI locators change</li>
+  <li>❖ Improved readability and reusability</li>
+  <li>❖ Reduced duplication across test steps</li>
+</ul>
 
 ---
 
@@ -217,31 +281,49 @@ Selenium-cucumber-project/
 
 ### What each folder/package is for
 
-- ❖ `src/test/resources/Features/`  
-  Contains the **Cucumber `.feature` files** written in **Gherkin** (BDD scenarios).
+<ul>
+  <li>
+    ❖ <code>src/test/resources/Features/</code><br/>
+    Contains the <b>Cucumber <code>.feature</code> files</b> written in <b>Gherkin</b> (BDD scenarios).
+  </li>
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/stepdefinitions/`  
-  Contains **Step Definition** classes that map `Given/When/Then` steps to Java code.
+  <li>
+    ❖ <code>src/test/java/com/Sneha/Automation_exercise/stepdefinitions/</code><br/>
+    Contains <b>Step Definition</b> classes that map <code>Given/When/Then</code> steps to Java code.
+  </li>
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/Pages/`  
-  Contains **Page Object Model (POM)** classes implemented using **Page Factory** (`@FindBy` locators + page actions).
+  <li>
+    ❖ <code>src/test/java/com/Sneha/Automation_exercise/Pages/</code><br/>
+    Contains <b>Page Object Model (POM)</b> classes implemented using <b>Page Factory</b> (<code>@FindBy</code> locators + page actions).
+  </li>
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/Runners/CucumberRunner.java`  
-  The **Cucumber runner** used to execute the test suite.
+  <li>
+    ❖ <code>src/test/java/com/Sneha/Automation_exercise/Runners/CucumberRunner.java</code><br/>
+    The <b>Cucumber runner</b> used to execute the test suite.
+  </li>
 
-- ❖ `src/test/java/com/Sneha/Automation_exercise/utils/`  
-  Framework utilities like:
-  - ❖ `Driver.java` (WebDriver lifecycle)
-  - ❖ `BrowserUtils.java` (common helpers: waits, scrolling, element actions, etc.)
-  - ❖ `Property.java` (config/property reader)
-  - ❖ `ScenarioContext.java` (scenario-level shared context)
-  - ❖ `WaitTime.java` (wait constants)
+  <li>
+    ❖ <code>src/test/java/com/Sneha/Automation_exercise/utils/</code><br/>
+    Framework utilities like:
+    <ul>
+      <li>❖ <code>Driver.java</code> (WebDriver lifecycle)</li>
+      <li>❖ <code>BrowserUtils.java</code> (common helpers: waits, scrolling, element actions, etc.)</li>
+      <li>❖ <code>Property.java</code> (config/property reader)</li>
+      <li>❖ <code>ScenarioContext.java</code> (scenario-level shared context)</li>
+      <li>❖ <code>WaitTime.java</code> (wait constants)</li>
+    </ul>
+  </li>
 
-- ❖ `pom.xml`  
-  Maven dependencies + test execution configuration.
+  <li>
+    ❖ <code>pom.xml</code><br/>
+    Maven dependencies + test execution configuration.
+  </li>
 
-- ❖ `testng.xml`  
-  TestNG suite file (if running via TestNG integration).
+  <li>
+    ❖ <code>testng.xml</code><br/>
+    TestNG suite file (if running via TestNG integration).
+  </li>
+</ul>
 
 ---
 
@@ -262,49 +344,26 @@ Selenium-cucumber-project/
 ### 📢 Advertisements / Random Pop-ups Appearing
 **Problem:** ads (banners/iframes/popups) intermittently appear and block clicks or hide elements, causing flaky failures.  
 **How it was resolved:**
-- ❖ Added a **safe-check** before interacting with elements:
-  - ❖ detect whether an ad overlay/popup is present
-  - ❖ if present, **close it** (if a close button exists) OR wait until it disappears
-- ❖ As a fallback for stubborn overlays:
-  - ❖ scroll the target element into view
-  - ❖ use `ExpectedConditions.elementToBeClickable`
-  - ❖ (optional/last resort) JavaScript click only when normal click is consistently intercepted
+<ul>
+  <li>
+    ❖ Added a <b>safe-check</b> before interacting with elements:
+    <ul>
+      <li>❖ detect whether an ad overlay/popup is present</li>
+      <li>❖ if present, <b>close it</b> (if a close button exists) OR wait until it disappears</li>
+    </ul>
+  </li>
+  <li>
+    ❖ As a fallback for stubborn overlays:
+    <ul>
+      <li>❖ scroll the target element into view</li>
+      <li>❖ use <code>ExpectedConditions.elementToBeClickable</code></li>
+      <li>❖ (optional/last resort) JavaScript click only when normal click is consistently intercepted</li>
+    </ul>
+  </li>
+</ul>
 
 > This approach reduces flaky failures by ensuring the page is in a stable, interactable state before every action.
 
 ### ♻️ Reusability & Maintainability
 **Problem:** duplicate code across scenarios  
 **Solution:** keep Step Definitions thin and push logic into Page Objects + utilities.
-
----
-
-## How to Run Tests (Maven)
-
-### Run all tests
-```bash
-mvn clean test
-```
-
-### Run by Cucumber tags (if tags are implemented)
-```bash
-mvn test -Dcucumber.filter.tags="@smoke"
-```
-
-> If your runner uses a different property (older style), it may be:
-> `-Dcucumber.options="--tags @smoke"`
-
----
-
-## Target Application
-- ❖ Website: **automationexercise.com**
-- ❖ Automation Type: **UI Functional Testing**
-- ❖ Framework: **Selenium + Cucumber (BDD)**
-- ❖ Design: **POM / Page Factory**
-- ❖ Build Tool: **Maven**
-
----
-
-<div align="center">
-  <hr style="margin: 18px auto; max-width: 950px;" />
-  <sub>Built for learning, practice, and maintainable UI automation.</sub>
-</div>
