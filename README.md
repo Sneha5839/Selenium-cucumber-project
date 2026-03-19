@@ -90,6 +90,39 @@ This project automates UI functional scenarios for **automationexercise.com** us
 
 ---
 
+## Modules / Test Scenarios Implemented
+
+The framework covers end-to-end workflows on **automationexercise.com**, including:
+
+- **Sign Up (New User Registration)**
+  - Register a new user with valid details
+  - Validate successful account creation
+
+- **Login (Existing User)**
+  - Login with valid credentials
+  - Negative login (invalid credentials) validation
+
+- **Product Search**
+  - Search for a product using the search functionality
+  - Validate relevant products are displayed
+
+- **Add to Cart**
+  - Add a product to the cart
+  - Validate cart contents and product details
+
+- **Purchase / Checkout Flow**
+  - Complete purchase after logging in as:
+    - a **new user** (register → login → checkout)
+    - an **existing user** (login → checkout)
+  - Proceed through address/summary steps
+  - **Complete payment process** and validate order placement
+
+- **Account Deletion (Cleanup)**
+  - Delete the user account after order completion (where applicable)
+  - Validate account deletion confirmation
+
+---
+
 ## Key Features Implemented
 
 - ✅ **BDD scenarios** for key flows on *automationexercise.com*
@@ -125,6 +158,87 @@ This project automates UI functional scenarios for **automationexercise.com** us
 - Better maintainability when UI locators change
 - Improved readability and reusability
 - Reduced duplication across test steps
+
+---
+
+## Project Structure
+
+```text
+Selenium-cucumber-project/
+├─ pom.xml
+├─ testng.xml
+├─ automation_test_run_output.bat
+├─ src/
+│  ├─ main/
+│  └─ test/
+│     ├─ java/
+│     │  ├─ Initial.java
+│     │  └─ com/
+│     │     └─ Sneha/
+│     │        └─ Automation_exercise/
+│     │           ├─ Pages/
+│     │           │  ├─ CartPage.java
+│     │           │  ├─ ContactUsPage.java
+│     │           │  ├─ LoginFailPage.java
+│     │           │  ├─ LoginPage.java
+│     │           │  ├─ LogoutPage.java
+│     │           │  ├─ ProductDetailsPage.java
+│     │           │  ├─ ProductsPage.java
+│     │           │  ├─ SignUpExistingEmailPage.java
+│     │           │  ├─ SignUppage.java
+│     │           │  └─ TestCasesPage.java
+│     │           ├─ Runners/
+│     │           │  └─ CucumberRunner.java
+│     │           ├─ stepdefinitions/
+│     │           │  ├─ AddToCartSteps.java
+│     │           │  ├─ ContactUsSteps.java
+│     │           │  ├─ LoginFailSteps.java
+│     │           │  ├─ LoginSteps.java
+│     │           │  ├─ LogoutSteps.java
+│     │           │  ├─ ProductsSteps.java
+│     │           │  ├─ SignUpExistingEmailSteps.java
+│     │           │  ├─ SignupSteps.java
+│     │           │  └─ TestCasesSteps.java
+│     │           └─ utils/
+│     │              ├─ BrowserUtils.java
+│     │              ├─ Driver.java
+│     │              ├─ Property.java
+│     │              ├─ ScenarioContext.java
+│     │              └─ WaitTime.java
+│     └─ resources/
+│        ├─ Features/
+│        └─ test-files/
+├─ target/
+└─ test-output/
+```
+
+### What each folder/package is for
+
+- `src/test/resources/Features/`  
+  Contains the **Cucumber `.feature` files** written in **Gherkin** (BDD scenarios).
+
+- `src/test/java/com/Sneha/Automation_exercise/stepdefinitions/`  
+  Contains **Step Definition** classes that map `Given/When/Then` steps to Java code.
+
+- `src/test/java/com/Sneha/Automation_exercise/Pages/`  
+  Contains **Page Object Model (POM)** classes implemented using **Page Factory** (`@FindBy` locators + page actions).
+
+- `src/test/java/com/Sneha/Automation_exercise/Runners/CucumberRunner.java`  
+  The **Cucumber runner** used to execute the test suite.
+
+- `src/test/java/com/Sneha/Automation_exercise/utils/`  
+  Framework utilities like:
+  - `Driver.java` (WebDriver lifecycle)
+  - `BrowserUtils.java` (common helpers: waits, scrolling, element actions, etc.)
+  - `Property.java` (config/property reader)
+  - `ScenarioContext.java` (scenario-level shared context)
+  - `WaitTime.java` (wait constants)
+
+- `pom.xml`  
+  Maven dependencies + test execution configuration.
+
+- `testng.xml`  
+  TestNG suite file (if running via TestNG integration).
 
 ---
 
