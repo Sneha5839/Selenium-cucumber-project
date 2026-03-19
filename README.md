@@ -42,11 +42,11 @@ This project automates UI functional scenarios for **automationexercise.com** us
 ## Main Software Installed (Prerequisites)
 
 ### Required
-- ❖ **Java (JDK 8+)**
-- ❖ **Maven**
-- ❖ **IDE**: IntelliJ IDEA / Eclipse
-- ❖ **Browser**: Chrome / Edge / Firefox
-- ❖ **WebDriver binaries** (or WebDriverManager dependency if used)
+  ❖ **Java (JDK 8+)**
+  ❖ **Maven**
+  ❖ **IDE**: IntelliJ IDEA / Eclipse
+  ❖ **Browser**: Chrome / Edge / Firefox
+  ❖ **WebDriver binaries** (or WebDriverManager dependency if used)
 
 ### Recommended
 - ❖ **Git**
