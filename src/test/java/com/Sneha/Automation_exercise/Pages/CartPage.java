@@ -12,16 +12,20 @@ public class CartPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//h2[text()='Shopping Cart'] | //h2[contains(text(),'Cart')]")
+    @FindBy(xpath = "//li[contains(@class,'active') and contains(text(),'Shopping Cart')] | //div[@id='cart_info']")
     public WebElement cartHeading;
 
     // Products rows in cart
-    @FindBy(xpath = "//tr[contains(@id,'cart_item') or contains(@class,'cart_item')]")
+    @FindBy(xpath = "//table[@id='cart_info_table']//tbody/tr[contains(@id,'product-')]")
     public List<WebElement> cartItems;
 
     @FindBy(xpath = "//button[text()='Continue Shopping']")
     public WebElement continueShoppingButton;
     
-    @FindBy(xpath = "//a[text()='Proceed To Checkout']")
+    @FindBy(xpath = "//a[contains(@class,'check_out')]")
     public WebElement proceedToCheckoutButton;
+
+    // Quantity column for the first cart item
+    @FindBy(xpath = "//td[@class='cart_quantity']/button")
+    public WebElement firstCartItemQuantity;
 }

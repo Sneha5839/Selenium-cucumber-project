@@ -2,78 +2,108 @@ package com.Sneha.Automation_exercise.stepdefinitions;
 
 import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.Sneha.Automation_exercise.utils.BrowserUtils.*;
+import java.time.Duration;
+import java.util.List;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 
-import com.Sneha.Automation_exercise.Pages.ProductsPage;
 import com.Sneha.Automation_exercise.utils.Driver;
 
-import Sneha.Automation_Exercise.BaseTest;
+public class AddToCartSteps {
 
-import com.Sneha.Automation_exercise.Pages.CartPage;
+    /** Fresh WebDriverWait each call — never holds stale state */
+    private WebDriverWait getWait() {
+        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
+    }
 
-public class AddToCartSteps extends BaseTest {
-    ProductsPage products = new ProductsPage();
-    CartPage cart = new CartPage();
+    private JavascriptExecutor js() {
+        return (JavascriptExecutor) Driver.getDriver();
+    }
+
+    /** Remove ad overlays & iframes that can intercept clicks */
+    private void removeAds() {
+        js().executeScript(
+            "const ads = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate');" +
+            "while (ads.length > 0) ads[0].remove();" +
+            "document.querySelectorAll('iframe[id^=\"aswift\"], iframe[id^=\"google_ads\"]').forEach(f => f.remove());"
+        );
+    }
 
     @When("user clicks on Products link")
     public void user_clicks_on_products_link() {
-        clickOnElement(products.productsLink, "Products link");
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); while (elements.length > 0) elements[0].remove()");
+        WebElement productsLink = getWait().until(
+            ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Products')]"))
+        );
+        productsLink.click();
     }
 
     @Then("user adds the first product to cart")
-    public void user_adds_the_first_product_to_cart() {
-        // Wait for products to be visible
-        waitForVisibility(products.productLinks.get(0));
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        //js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); while (elements.length > 0) elements[0].remove()");
-        clickOnElement(products.addToCartButtons.get(0), "Add to cart first product");
-        // If modal appears, click continue shopping or close — best effort
-        /*try {
-            // try clicking view cart if displayed in modal
-            waitSleep(com.Sneha.Automation_exercise.utils.WaitTime.VERY_SHORT);
-        } catch (Exception ignored) {}*/
-        
-        js.executeScript("window.scrollBy(0, 500);");
+    public void user_adds_the_first_product_to_cart() throws InterruptedException {
+        // Wait for products page to fully load
+        getWait().until(ExpectedConditions.presenceOfElementLocated(
+            By.cssSelector("div.features_items")
+        ));
+        removeAds();
+        Thread.sleep(1000);
+
+        // Locate the first product's Add to Cart button fresh, scroll into view, JS click
+        WebElement firstAddToCart = Driver.getDriver().findElement(
+            By.cssSelector("a.btn.add-to-cart[data-product-id='1']")
+        );
+        js().executeScript("arguments[0].scrollIntoView({block: 'center'});", firstAddToCart);
+        Thread.sleep(500);
+        js().executeScript("arguments[0].click();", firstAddToCart);
     }
+
     @Then("clicks on Continue Shopping button")
-    public void clicks_on_continue_shopping_button() {
-        // Write code here that turns the phrase above into concrete actions
-    	JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        //js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); while (elements.length > 0) elements[0].remove()");
-       clickOnElement(cart.continueShoppingButton, "Continue Shopping button");
-       js.executeScript("window.scrollBy(0, 500);");
+    public void clicks_on_continue_shopping_button() throws InterruptedException {
+        // Wait for the modal to appear and button to be clickable (fresh locate — never stale)
+        WebElement continueBtn = getWait().until(
+            ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Continue Shopping')]"))
+        );
+        continueBtn.click();
+        Thread.sleep(1000);
     }
 
     @Then("user adds the second product to cart")
-    public void user_adds_the_second_product_to_cart() {
-        // Write code here that turns the phrase above into concrete actions
-    	JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        //js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); while (elements.length > 0) elements[0].remove()");
-        //waitForVisibility(products.productLinks.get(0));
-        js.executeScript("window.scrollBy(0, 500);"); // Scroll down to ensure next products are in view
-        hoverOverElement(products.productLinks.get(2), "Hover over second product");
-        clickOnElement(products.addToCartButtons.get(2), "Add to cart second product");
-    }
+    public void user_adds_the_second_product_to_cart() throws InterruptedException {
+        removeAds();
+        Thread.sleep(500);
 
-    
+        // Locate the second product's Add to Cart button fresh, scroll into view, JS click
+        WebElement secondAddToCart = Driver.getDriver().findElement(
+            By.cssSelector("a.btn.add-to-cart[data-product-id='2']")
+        );
+        js().executeScript("arguments[0].scrollIntoView({block: 'center'});", secondAddToCart);
+        Thread.sleep(500);
+        js().executeScript("arguments[0].click();", secondAddToCart);
+    }
 
     @When("user clicks on View Cart")
     public void user_clicks_on_view_cart() {
-        clickOnElement(products.viewCartLink, "View Cart link");
+        // The "View Cart" link appears in the modal after adding to cart
+        WebElement viewCart = getWait().until(
+            ExpectedConditions.elementToBeClickable(By.xpath("//u[text()='View Cart']"))
+        );
+        viewCart.click();
     }
 
     @Then("verify both the products are present in the cart")
     public void verify_the_product_is_present_in_the_cart() {
-        assertTrue(isElementVisible(cart.cartHeading, "Cart heading"));
-        assertTrue(cart.cartItems.size() > 0, "Expected at least one item in cart");
+        // Wait for cart page to load
+        getWait().until(ExpectedConditions.urlContains("view_cart"));
+        getWait().until(ExpectedConditions.presenceOfElementLocated(By.id("cart_info_table")));
+
+        List<WebElement> cartItems = Driver.getDriver().findElements(
+            By.cssSelector("#cart_info_table tbody tr")
+        );
+        assertTrue(cartItems.size() >= 2, "Expected at least 2 items in cart but found " + cartItems.size());
     }
 }

@@ -33,4 +33,4 @@ entering the user details
 Examples:
 
 |username|useremail|firstname|lastname|company|address1|address2|country|state|city|zipcode|mobile|
-|Wendy|wendy@example.com|Wendy|Joe|Acme Corp|123 Main St|Suite 100|United States|California|Los Angeles|90001|5551234567|
+|Wendy|wendy11@example.com|Wendy|Joe|Acme Corp|123 Main St|Suite 100|United States|California|Los Angeles|90001|5551234567|

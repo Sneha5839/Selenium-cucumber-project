@@ -39,8 +39,13 @@ public class Driver {
 
     public static void closeDriver() {
         if (driverPool.get() != null) {
-            driverPool.get().quit();
-            driverPool.remove(); // Essential for ThreadLocal cleanup
+            try {
+                driverPool.get().quit();
+            } catch (Exception e) {
+                System.err.println("Error during driver quit: " + e.getMessage());
+            } finally {
+                driverPool.remove(); // Essential for ThreadLocal cleanup
+            }
         }
     }
 }

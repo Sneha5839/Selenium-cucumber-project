@@ -6,7 +6,7 @@
       <class name="com.Sneha.Automation_exercise.Runners.CucumberRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="12"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.Sneha.Automation_exercise.Runners.CucumberRunner -->

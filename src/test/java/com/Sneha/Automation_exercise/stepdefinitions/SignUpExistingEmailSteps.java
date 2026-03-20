@@ -16,6 +16,12 @@ public class SignUpExistingEmailSteps {
 
   
 
+    @When("user enters existing signup email {string}")
+    public void user_enters_existing_signup_email(String email) {
+        // Use the email as-is without dynamic generation — this is for testing duplicate email
+        sendKeys(signup.newuseremail, email, "Existing signup email");
+    }
+
     @Then("message {string} is displayed")
     public void message_is_displayed(String expected) {
         assertTrue(isElementVisible(existing.emailAlreadyExistsLabel, "Email exists label"));

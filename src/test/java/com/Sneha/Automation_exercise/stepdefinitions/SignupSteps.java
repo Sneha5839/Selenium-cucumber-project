@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +27,48 @@ public class SignupSteps extends BaseTest{
 	 // store entered values to verify on the account info page
 	 private String enteredName;
 	 private String enteredEmail;
+
+	 // Static map to share dynamically generated credentials between scenarios.
+	 // Key = original email from feature file, Value = dynamically generated email.
+	 private static final ConcurrentHashMap<String, String> dynamicEmails = new ConcurrentHashMap<>();
+	 private static final ConcurrentHashMap<String, String> dynamicNames = new ConcurrentHashMap<>();
+
+	 /**
+	  * Makes an email unique by inserting a timestamp before the '@' sign.
+	  * e.g. "test@example.com" -> "test_20260320110647@example.com"
+	  */
+	 private static String makeUniqueEmail(String email) {
+		 String timestamp = String.valueOf(System.currentTimeMillis());
+		 int atIndex = email.indexOf('@');
+		 if (atIndex > 0) {
+			 return email.substring(0, atIndex) + "_" + timestamp + email.substring(atIndex);
+		 }
+		 return email + "_" + timestamp;
+	 }
+
+	 /**
+	  * Makes a name unique by appending a short numeric suffix.
+	  */
+	 private static String makeUniqueName(String name) {
+		 String suffix = String.valueOf(System.currentTimeMillis() % 100000);
+		 return name + suffix;
+	 }
+
+	 /**
+	  * Returns the dynamically generated email for a given original email,
+	  * or the original email if no dynamic version was created.
+	  */
+	 public static String getDynamicEmail(String originalEmail) {
+		 return dynamicEmails.getOrDefault(originalEmail, originalEmail);
+	 }
+
+	 /**
+	  * Returns the dynamically generated name for a given original name,
+	  * or the original name if no dynamic version was created.
+	  */
+	 public static String getDynamicName(String originalName) {
+		 return dynamicNames.getOrDefault(originalName, originalName);
+	 }
 	 
 	@Given("user navigates to the application")
 	public void user_navigates_to_the_application() {
@@ -52,17 +95,20 @@ public class SignupSteps extends BaseTest{
 
 	@When("user enter {string} for name")
 	public void user_enter_for_name(String string) {
-	    // store the entered name and type into the field
-		this.enteredName = string;
-		sendKeys(signuppage.newusername,string,"user name");
-	   
+	    // Generate a unique name and store it for cross-scenario lookup
+		String uniqueName = makeUniqueName(string);
+		dynamicNames.put(string, uniqueName);
+		this.enteredName = uniqueName;
+		sendKeys(signuppage.newusername, uniqueName, "user name");
 	}
 
 	@When("user enters {string} for email")
 	public void user_enters_for_email(String string) {
-	    // store the entered email and type into the field
-		this.enteredEmail = string;
-		sendKeys(signuppage.newuseremail,string,"User email");
+	    // Generate a unique email and store it for cross-scenario lookup
+		String uniqueEmail = makeUniqueEmail(string);
+		dynamicEmails.put(string, uniqueEmail);
+		this.enteredEmail = uniqueEmail;
+		sendKeys(signuppage.newuseremail, uniqueEmail, "User email");
 	}
 
 	@Then("clicks Signup button")
@@ -113,10 +159,12 @@ public class SignupSteps extends BaseTest{
 	}
 	@Then("select day month and year of date of birth")
 	public void select_day_month_and_year_of_date_of_birth() {
-	    // Select a day, month and year from the dropdowns. Use helper for dropdowns.
-		// Choose day = 1 (index 1 — second option), month = January (index 1), year = 1990 (select by visible text)
+	    // Scroll into view before interacting with each dropdown
+		scrollTo(signuppage.days);
 		sendKeysToDropDownByIndex(signuppage.days, 1, "Day dropdown");
+		scrollTo(signuppage.months);
 		sendKeysToDropDownByIndex(signuppage.months, 1, "Month dropdown");
+		scrollTo(signuppage.years);
 		sendKeysToDropDownByValue(signuppage.years, "1990", "Year dropdown");
 	}
 	@Then("tick the checkbox signup for our newsletter")
@@ -164,7 +212,8 @@ public class SignupSteps extends BaseTest{
 
 	@When("user enters country {string}")
 	public void user_enters_country(String country) {
-		// select a country by visible text
+		// scroll into view before interacting with the dropdown
+		scrollTo(signuppage.country);
 		sendKeysToDropDown(signuppage.country, country, "Country dropdown");
 	}
 

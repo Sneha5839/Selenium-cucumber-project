@@ -2,7 +2,7 @@
 Feature: Add to cart
   Verify that a user can add a product to the cart and view it in the cart page
 
-  Scenario: Add first product to cart and verify in cart
+  Scenario: Add two products to cart and verify in cart
     Given user navigates to the application
     Then verify that the home page is visible successfully
     When user clicks on Products link

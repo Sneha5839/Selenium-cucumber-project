@@ -21,7 +21,9 @@ public class LoginSteps extends BaseTest {
 
     @When("user enters existing email {string}")
     public void user_enters_existing_email(String email) {
-      sendKeys(loginPage.loginEmailInput, email, "Login email");
+      // Look up the dynamically generated email if this email was used for signup
+      String actualEmail = SignupSteps.getDynamicEmail(email);
+      sendKeys(loginPage.loginEmailInput, actualEmail, "Login email");
     }
 
     @When("user enters existing password {string}")
@@ -40,8 +42,10 @@ public class LoginSteps extends BaseTest {
 
     @Then("verify user is logged in as {string}")
     public void verify_user_is_logged_in_as(String username) {
+        // Look up the dynamically generated name if this name was used for signup
+        String actualUsername = SignupSteps.getDynamicName(username);
         assertTrue(isElementVisible(loginPage.loggedInAsLabel, "Logged in as label"));
         String text = getElementText(loginPage.loggedInAsLabel, "Logged in as label");
-        assertTrue(text.contains(username), "Expected logged in username to contain: " + username + " but was: " + text);
+        assertTrue(text.contains(actualUsername), "Expected logged in username to contain: " + actualUsername + " but was: " + text);
     }
 }
