@@ -129,14 +129,16 @@ The framework covers end-to-end workflows on **automationexercise.com**, includi
 -  ✅ **POM/Page Factory** design:
     -  Page-wise separation of locators and page actions
     -  Cleaner step definitions (readable and reusable)
--  ✅ **Reusable Utilities** (commonly implemented in automation frameworks):
+-  ✅ **Reusable Utilities** :
     -  wait helpers (explicit waits)
     -  common actions (click/type/select)
 -  ✅ **Hooks (Before/After)** for:
     -  browser setup
     -  teardown / cleanup
-    -  screenshots on failure (if implemented)
--  ✅ **Cucumber Reporting** (HTML/JSON via Cucumber plugins, if configured)
+    -  screenshots on failure 
+-  ✅ **Cucumber Reporting**
+-  HTML reports can be seen in ..\target\cucumber-reports\index.html
+-  Allure reports can be seen by running the command in terminal window as mvn allure:serve
 
 ---
 
